@@ -9,6 +9,7 @@
     text-align: center;
     margin-top: 50px;
     margin-bottom: 150px;
+    position: relative;
 }
 
 .Input:focus {
@@ -18,4 +19,17 @@
 
 .Input::placeholder {
     text-align: center;
+}
+
+.Button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 65px;
+    transition: all 0.2s;
+}
+
+.Button:active {
+    transform: scale(1.1);
 }

@@ -5,6 +5,8 @@ import Aux from '../../hoc/Aux';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import WeatherResult from '../../components/WeatherResult/WeatherResult';
 
+import Classes from './CheckWeather.css'
+
 class CheckWeather extends Component {
 
     constructor(props) {
@@ -86,7 +88,7 @@ class CheckWeather extends Component {
         }
         return (
             <Aux>
-                <form onSubmit={this.getResults.bind(this)}>
+                <form className={Classes.Form} onSubmit={this.getResults.bind(this)}>
                     <SearchBox change={this.handleInputChange}/>
                 </form>
                 {weatherResult}

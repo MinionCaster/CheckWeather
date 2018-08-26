@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './index.css';
-
 import Layout from './components/Layout/Layout';
 import CheckWeather from './containers/CheckWeather/CheckWeather';
+
 
 class App extends Component {
 

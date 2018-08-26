@@ -20,6 +20,8 @@ class CheckWeather extends Component {
                 weather: '',
                 description: '',
                 icon: '',
+                wind: '',
+                date: ''
             }
         }
 
@@ -48,7 +50,9 @@ class CheckWeather extends Component {
                     pressure: res.data.list[0].main.pressure.toFixed(0),
                     weather: res.data.list[0].weather[0].main,
                     description: res.data.list[0].weather[0].description,
-                    icon: res.data.list[0].weather[0].icon
+                    icon: res.data.list[0].weather[0].icon,
+                    wind: res.data.list[0].wind.speed,
+                    date: res.data.list[0].dt_txt
                 }
             }, function() {
                 console.log(this.state.weatherPrint);
@@ -60,6 +64,10 @@ class CheckWeather extends Component {
 
     render() {
         let weatherResult = null;
+        const capitalizeFirstLetter = string => {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
         if (this.state.loading === false) {
            weatherResult = <WeatherResult 
             city={this.state.weatherPrint.city}
@@ -68,8 +76,10 @@ class CheckWeather extends Component {
             humidity={this.state.weatherPrint.humidity}
             pressure={this.state.weatherPrint.pressure}
             weather={this.state.weatherPrint.weather}
-            description={this.state.weatherPrint.description}
+            description={capitalizeFirstLetter(this.state.weatherPrint.description)}
             icon={this.state.weatherPrint.icon}
+            wind={this.state.weatherPrint.wind}
+            date={this.state.weatherPrint.date}
             />
         } else {
             weatherResult = null;

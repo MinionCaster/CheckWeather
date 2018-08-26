@@ -1,3 +1,21 @@
 .Input {
+    display: flex;
+    align-self: center;
+    border: none;
     margin: 0 auto;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.2s;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.Input:focus {
+    transform: scale(1.05);
+    outline: 0;
+}
+
+.Input::placeholder {
+    text-align: center;
 }
